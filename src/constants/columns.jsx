@@ -12,7 +12,6 @@ export const headers = [
   { label: "ACTION", width: "auto" },
 ];
 
-
 export const ESTIMATES_FIELD = [
   { label: "Version", width: "auto" },
   { label: "Project", width: "auto" },

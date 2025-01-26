@@ -5,12 +5,14 @@ export const fetchDashboardData = createAsyncThunk(
   "dashboard/fetchDashboardData",
   async (_, { rejectWithValue }) => {
     try {
-      const data = await apiCall("https://67920e6bcf994cc680487cf6.mockapi.io/dashboard");
+      const data = await apiCall(
+        "https://67920e6bcf994cc680487cf6.mockapi.io/dashboard",
+      );
       return data;
     } catch (error) {
       return rejectWithValue(error);
     }
-  }
+  },
 );
 
 const dashboardSlice = createSlice({

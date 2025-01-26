@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { apiCall } from "../../utils/api";
 
-// Async thunk to fetch estimates
+
 export const fetchEstimates = createAsyncThunk(
   "estimates/fetchEstimates",
   async (_, { rejectWithValue }) => {
@@ -22,7 +22,6 @@ const estimatesSlice = createSlice({
     error: null,
   },
   reducers: {
-    // Add any reducers if you need other actions
   },
   extraReducers: (builder) => {
     builder

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { apiCall } from "../../utils/api";
 
-// Define the base API URL
 const API_URL = "https://637476b908104a9c5f80a039.mockapi.io/projects";
 
 export const fetchProjects = createAsyncThunk(
@@ -43,8 +42,8 @@ export const deleteProject = createAsyncThunk(
   async (projectId, { rejectWithValue }) => {
     const url = `${API_URL}/${projectId}`;
     try {
-      await apiCall(url, "DELETE"); // No body is needed for DELETE requests
-      return projectId; // Return the ID to filter it out in the reducer
+      await apiCall(url, "DELETE");
+      return projectId;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -117,7 +116,7 @@ const projectsSlice = createSlice({
         state.loading = false;
         state.projects = state.projects.filter(
           (project) => project.id !== action.payload,
-        ); // Remove deleted project
+        );
       })
       .addCase(deleteProject.rejected, (state, action) => {
         state.loading = false;
